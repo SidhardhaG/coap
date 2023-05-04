@@ -1,0 +1,22 @@
+﻿<div class="p-4">
+    <div class="container">
+        <h1>Hi {{user?.firstName}}!</h1>
+        <p>Welcome to the Seat allocation process</p>
+    </div>
+    <div class="container">
+      <h2>Select Two Files to Upload</h2>
+      <form (submit)="onSubmit()">
+        <div class="mb-3">
+          <label for="file1" class="form-label">Seat matrix from MHRD</label>
+          <input type="file" class="form-control" id="file1" (change)="onFileChange($event, 'file1')" required>
+        </div>
+        <div class="mb-3">
+          <label for="file2" class="form-label">Excel Sheet from COAP</label>
+          <input type="file" class="form-control" id="file2" (change)="onFileChange($event, 'file2')" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Upload</button>
+      </form>
+      <p>The first file is {{file1.name}}.</p>
+      <p>The second file is {{file2.name}}.</p>
+    </div>
+</div>
