@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Upload and View CSV Files</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+		}
+		form {
+			margin: 20px 0;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		label {
+			font-weight: bold;
+			margin-bottom: 10px;
+			text-align: center;
+			display: block;
+		}
+		input[type="file"] {
+			border: 2px solid #ccc;
+			padding: 10px;
+			margin-bottom: 20px;
+			background-color: #f9f9f9;
+			border-radius: 5px;
+			font-size: 1.2em;
+			max-width: 400px;
+			width: 100%;
+			box-sizing: border-box;
+		}
+		input[type="submit"] {
+			background-color: #4CAF50;
+			color: #fff;
+			border: none;
+			padding: 10px 20px;
+			font-size: 1.2em;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: background-color 0.3s ease-in-out;
+			max-width: 400px;
+			width: 100%;
+			box-sizing: border-box;
+		}
+		input[type="submit"]:hover {
+			background-color: #3e8e41;
+		}
+		.success-message {
+			color: #0b6623;
+			font-weight: bold;
+			margin-top: 20px;
+			text-align: center;
+		}
+		.show-data-btn {
+			margin-top: 20px;
+			font-size: 1.2em;
+			border: none;
+			background-color: transparent;
+			color: #4CAF50;
+			text-decoration: underline;
+			cursor: pointer;
+			transition: color 0.3s ease-in-out;
+		}
+		.show-data-btn:hover {
+			color: #3e8e41;
+		}
+		.upload-instructions {
+			margin-bottom: 20px;
+			color: #666;
+			font-size: 0.8em;
+			text-align: center;
+		}
+		.error-message {
+			color: #f00;
+			font-weight: bold;
+			margin-top: 10px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<form method="POST" enctype="multipart/form-data" action="/">
+		<label for="csv-file">Select a CSV file to upload:</label>
+		<input type="file" name="file" id="csv-file" accept=".csv" required>
+		<input type="submit" value="Upload">
+		<div class="upload-instructions">Supported file formats: CSV</div>
+		<div class="success-message">
+			<?php if (isset($success_message)) { echo "File uploaded successfully"; } ?>
+		</div>
+		<div class="error-message">
+			<?php if (isset($error_message)) { echo "Error uploading file"; } ?>
+		</div>
+	</form>
+	<a href="/show_data" target="_blank" class="show-data-btn">View uploaded CSV file</a>
+</body>
+</html>
+

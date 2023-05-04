@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>My App</title>
+	<link rel="stylesheet" href="/stylesheet/style.css">
+</head>
+<body>
+	<header>
+		<h1>My App</h1>
+		<nav>
+			<ul>
+				{% if session %}
+				<li><a href="/upload">Upload</a></li>
+				<li><a href="/logout">Logout</a></li>
+				{% else %}
+				<li><a href="/login">Login</a></li>
+				{% endif %}
+			</ul>
+		</nav>
+	</header>
+	<main>
+		{% if session %}
+		<section class="user-info">
+			<h2>Welcome, {{ session.userinfo.name }}!</h2>
+			<p>Email: {{ session.userinfo.email }}</p>
+			<p>Country: {{ session.userinfo.country }}</p>
+			<p>Organization: {{ session.userinfo.organization }}</p>
+		</section>
+		{% else %}
+		<section class="welcome">
+			<h2>Welcome Guest!</h2>
+			<p>Please login to access the app.</p>
+			<a href="/login" class="button">Login</a>
+		</section>
+		{% endif %}
+	</main>
+</body>
+</html>

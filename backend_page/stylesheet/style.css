@@ -1,0 +1,86 @@
+/* Global styles */
+body {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+}
+
+/* Header styles */
+header {
+	background-color: #333;
+	color: #fff;
+	padding: 20px;
+}
+
+header h1 {
+	margin: 0;
+	font-size: 2rem;
+}
+
+nav {
+	display: flex;
+	justify-content: flex-end;
+}
+
+nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+}
+
+nav ul li {
+	margin-left: 20px;
+}
+
+nav ul li:first-child {
+	margin-left: 0;
+}
+
+nav ul li a {
+	color: #fff;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 1.2rem;
+}
+
+/* Main styles */
+main {
+	padding: 20px;
+}
+
+.user-info h2 {
+	margin-top: 0;
+}
+
+.user-info p {
+	margin: 10px 0;
+}
+
+.welcome {
+	text-align: center;
+}
+
+.welcome h2 {
+	margin-top: 0;
+	font-size: 2rem;
+}
+
+.welcome p {
+	margin: 20px 0;
+	font-size: 1.2rem;
+}
+
+.button {
+	display: inline-block;
+	background-color: #333;
+	color: #fff;
+	padding: 10px 20px;
+	border-radius: 5px;
+	text-decoration: none;
+	transition: all 0.3s ease;
+}
+
+.button:hover {
+	background-color: #555;
+}
